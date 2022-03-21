@@ -23,7 +23,8 @@ const internSchema = new mongoose.Schema({
     mobile: {
         type: Number,
         required: true,
-        minlen: [10, "please enter a valid mobile number"]
+        minlen: [10, "please enter a valid mobile number"],
+        maxlen: [12, "please enter a valid mobile number"]
     },
     collegeId: {
         type: mongoose.Schema.Types.ObjectId,

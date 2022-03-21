@@ -4,7 +4,7 @@ const bodyParser = require("body-parser")
 
 const route = require('./routes/route');
 
-const url = "mongodb+srv://Deependra1999:Z1ZWVlMvcAFQsu2u@cluster0.4nkid.mongodb.net/Blogsite"
+const url = "mongodb+srv://Deependra1999:Z1ZWVlMvcAFQsu2u@cluster0.4nkid.mongodb.net/INTERN"
 
 const app = express()
 app.use(express.json())

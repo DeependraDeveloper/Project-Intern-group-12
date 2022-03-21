@@ -11,11 +11,11 @@ const allController = require('../controller/allController')
 
 
 //=-------------------------------------------------------------------------------------------------
-router.post("/Authors", authorController.createAuthor)
+router.post("/college", allController.createCollege)
 
-router.post("/login", blogController.loginAuthor)
+router.post("/intern", allController.createIntern)
 
-router.post('/blogs', mid1.mid1, blogController.Blogs)
+router.get('/details', allController.getDetails)
 
 
 
