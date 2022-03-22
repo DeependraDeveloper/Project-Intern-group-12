@@ -1,40 +1,32 @@
 const mongoose = require('mongoose')
-const validator = require('validator');
-
-
+const objectId = mongoose.Schema.Types.ObjectId
 
 const internSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: ["please enter the name"],
-        unique: true,
+        required: [true, 'name is required'],
         trim: true
     },
     email: {
         type: String,
-        unique: [true, " emailId already used"],
-        lowercase: true,
-        validate(val) {
-            if (!validator.isEmail(val)) {
-                throw new Error("Please enter a valid EmailId")
-            }
-        }
+        unique: true,
+        required: true,
+        trim: true
     },
     mobile: {
-        type: Number,
-        required: true,
-        minlen: [10, "please enter a valid mobile number"],
-        maxlen: [12, "please enter a valid mobile number"]
+        type: String,
+        required: [true, 'Please enter your Mobile number'],
+        unique: true,
+        trim: true
     },
     collegeId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "College",
+        type: objectId,
+        ref: "College"
     },
     isDeleted: {
         type: Boolean,
         default: false
     }
-
 }, { timestamps: true })
 
 module.exports = mongoose.model('Intern', internSchema)

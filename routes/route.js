@@ -1,23 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-//------------------------------------------------------------------------------------------------
-const allController = require('../controller/allController')
+const allContoller = require('../controller/allController');
 
 
-
-
-
-
-
-//=-------------------------------------------------------------------------------------------------
-router.post("/college", allController.createCollege)
-
-router.post("/intern", allController.createIntern)
-
-router.get('/details', allController.getDetails)
-
-
-
+//Collage creation
+router.post('/functionUp/Colleges', allContoller.createCollege);
+//Register for internship
+router.post('/functionUp/interns', allContoller.createInterns);
+//List students applied internship
+router.get("/functionup/collegeDetails", allContoller.giveAllInterns)
 
 module.exports = router;
